@@ -1,0 +1,1 @@
+export const DEPARTMENT = ["Computer","Civil","Mechanical"]
