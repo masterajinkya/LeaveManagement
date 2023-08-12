@@ -12,3 +12,8 @@
     position: relative;
     border-radius: 5px;
 }
+.imgs{
+    object-fit: cover;
+    height: 95vh;
+    position: fixed;
+}

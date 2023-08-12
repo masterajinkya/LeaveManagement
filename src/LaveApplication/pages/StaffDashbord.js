@@ -119,7 +119,6 @@ console.log("loginname", loginname);
       <div className='container'>
         <div className='row text-center'>
           <div className='col-sm-3'>
-
           </div>
           <div className='col-sm-2'>
             <h1 className='text-primary'>{loginstaffLeaves ? loginstaffLeaves.length:0}</h1>
@@ -140,7 +139,7 @@ console.log("loginname", loginname);
               <div className='border border-black rounded shadow p-3'>
                 <div className='mb-2'>
                   <h4>Leave For</h4>
-                  <p className='m-0'>{moment(data.from).format('Do MMMM YYYY')} to { moment(data.from).format('Do MMMM YYYY')}</p>
+                  <p className='m-0'>{moment(data.from).format('Do MMMM YYYY')} to { moment(data.to).format('Do MMMM YYYY')}</p>
                   <p>Number Of days {moment(data.to).diff(moment(data.form), "Days")+1}</p>
                 </div>
                 <div className='mb-2'>
