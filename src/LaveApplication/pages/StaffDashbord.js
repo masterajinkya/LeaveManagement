@@ -80,7 +80,10 @@ console.log("loginname", loginname);
 
   return (
     <>
+    <h5 className='my-5'>{loginstaffLeaves.fname} {loginstaffLeaves.lname}  </h5>
       <div className='text-center my-4'>
+    <h5 className='my-5'>{staffData.fname} {staffData.lname}  </h5>
+
         <Button sx={{ backgroundColor: "blue", color: "white", ":hover": { backgroundColor: "blue" } }} onClick={() => setOpen(true)}>+ Apply Leave</Button>
       </div>
 

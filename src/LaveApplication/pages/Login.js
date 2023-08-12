@@ -9,7 +9,7 @@ function Login() {
     const navigate = useNavigate()
 
     const [loginData, setLogindata] = useState({
-        email: "",
+        username: "",
         password: ""
     });
 
@@ -24,7 +24,7 @@ function Login() {
     const handleSubmit = (e) => {
         e.preventDefault()
         const storedUser = JSON.parse(localStorage.getItem("user"));
-        const finduser = storedUser.find((user) =>  user.email === loginData.email && user.password === loginData.password)
+        const finduser = storedUser.find((user) =>  user.username === loginData.username && user.password === loginData.password)
         if (finduser) {
             alert("login successful");
             console.log("login successful")
@@ -57,8 +57,8 @@ function Login() {
 
                     <Typography textAlign="center" color="primary" variant='h4'>Login Form</Typography>
 
-                    <TextField variant='outlined' margin='normal' placeholder='Enter Email'
-                        type='email' name='email' value={loginData.email} onChange={handleChange} />
+                    <TextField variant='outlined' margin='normal' placeholder='Enter username'
+                        type='text' name='username' value={loginData.username} onChange={handleChange} />
 
                     <TextField variant='outlined' margin='normal' placeholder='Enter Password'
                         type='password' name='password' value={loginData.password} onChange={handleChange} />

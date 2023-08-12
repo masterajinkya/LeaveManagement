@@ -9,7 +9,7 @@ function Register() {
 
   const navigate = useNavigate()
   const [registerdata, setRegisterdata] = useState({
-    role: "",
+    role: "hod",
     fname: "",
     lname: "",
     email: "",
@@ -34,8 +34,9 @@ function Register() {
     const staffUser = [...data, registerdata]
     localStorage.setItem("user", JSON.stringify(staffUser))
 
+
     setRegisterdata({
-      role: "",
+      role: "hod",
       fname: "",
       lname: "",
       email: "",
@@ -44,6 +45,7 @@ function Register() {
       username: "",
       password: ""
     })
+    navigate("/login")
   }
 
   useEffect(() => {
@@ -57,6 +59,12 @@ function Register() {
     navigate("/login")
   }
   console.log(data);
+  // const storedUser = JSON.parse(localStorage.getItem("user"));
+  // const SameUserdata = storedUser.find((user) => user.username === data.username || user.email === data.email)
+  // console.log(SameUserdata);
+
+
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -100,7 +108,7 @@ function Register() {
             /> */}
 
             <FormControl>
-              <RadioGroup row name='role'>
+              <RadioGroup row name='role' defaultValue="hod">
                 <FormControlLabel value="hod" control={<Radio />} label="Hod" onChange={handleChange} />
                 <FormControlLabel value="staff" control={<Radio />} label="Staff" onChange={handleChange} />
               </RadioGroup>
