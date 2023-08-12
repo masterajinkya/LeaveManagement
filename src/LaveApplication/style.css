@@ -12,3 +12,6 @@
     position: relative;
     border-radius: 5px;
 }
+.crop{
+    object-fit:cover
+}
