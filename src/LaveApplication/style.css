@@ -15,6 +15,6 @@
 .crop{
     object-fit:cover;
     position: relative;
-    width: 100%;
-  height: auto;
+    width: 100vh;
+  height: 100vh;
 }
