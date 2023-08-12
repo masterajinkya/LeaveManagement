@@ -12,3 +12,7 @@
     position: relative;
     border-radius: 5px;
 }
+.imgs{
+    object-fit: cover;
+    height: 100vh;
+}
