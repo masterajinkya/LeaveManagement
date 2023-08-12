@@ -12,9 +12,3 @@
     position: relative;
     border-radius: 5px;
 }
-.crop{
-    object-fit:cover;
-    position: relative;
-    width: 100vh;
-  height: 100vh;
-}
