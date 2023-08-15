@@ -30,48 +30,29 @@ function StaffDashbord() {
 
 
   const loginname = JSON.parse(localStorage.getItem("login"));
-console.log("loginname", loginname);
+  console.log("loginname", loginname);
   const handleChange = (e) => {
-    setAddLeave((prev) => ({ ...prev,loginname:loginname.id, id: uuidv4(), fname: loginname.fname, lname: loginname.lname, status: "pending", [e.target.name]: e.target.value }))
+    setAddLeave((prev) => ({ ...prev, loginname: loginname.id, id: uuidv4(), fname: loginname.fname, lname: loginname.lname, status: "pending", [e.target.name]: e.target.value }))
   }
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   setLeaveData([...leaveData, addLeave]);
-  //   localStorage.setItem("leavedata", JSON.stringify([...leaveData,addLeave]))
-  // }
-
-  //   const handleSubmit = (e) => {
-  //     e.preventDefault()
-  //     const leaveData =JSON.parse(localStorage.getItem("leavedata") || "[]")
-  //   leaveData.push(addLeave)
-  //   localStorage.setItem("leavedata",JSON.stringify(leaveData))
-  //   setAddLeave({
-  //     from: '',
-  //     to: "",
-  //     reason: ""
-  //   });
-  // }
-
 
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // leaveData.push(addLeave)
     setLeaveData([...leaveData, addLeave])
-    const ldata =[...leaveData, addLeave]
+    const ldata = [...leaveData, addLeave]
     localStorage.setItem("leavedata", JSON.stringify(ldata))
     setAddLeave({
       from: '',
       to: "",
       reason: ""
     });
+    setOpen(false)
   }
 
   const staffData = JSON.parse(localStorage.getItem("leavedata")) || [];
-  console.log("staffdata",staffData);
+  console.log("staffdata", staffData);
 
-  const loginstaffLeaves = staffData?.filter((leave)=>leave.loginname === loginname.id)
+  const loginstaffLeaves = staffData?.filter((leave) => leave.loginname === loginname.id)
   console.log(loginstaffLeaves);
 
   const approvedLeave = loginstaffLeaves?.filter((appr) => appr.status === "Approved")
@@ -80,10 +61,10 @@ console.log("loginname", loginname);
 
   return (
     <>
-    <h5 className='my-5'>{loginstaffLeaves.fname} {loginstaffLeaves.lname}  </h5>
+    <div className='text-center my-4'>
+      <h5>Welcome Mr/Mis: <span className='text-primary'>{loginname.fname} {loginname.lname}</span> </h5>
+    </div>
       <div className='text-center my-4'>
-    <h5 className='my-5'>{staffData.fname} {staffData.lname}  </h5>
-
         <Button sx={{ backgroundColor: "blue", color: "white", ":hover": { backgroundColor: "blue" } }} onClick={() => setOpen(true)}>+ Apply Leave</Button>
       </div>
 
@@ -124,7 +105,7 @@ console.log("loginname", loginname);
           <div className='col-sm-3'>
           </div>
           <div className='col-sm-2'>
-            <h1 className='text-primary'>{loginstaffLeaves ? loginstaffLeaves.length:0}</h1>
+            <h1 className='text-primary'>{loginstaffLeaves ? loginstaffLeaves.length : 0}</h1>
             <p>Total Leaves</p>
           </div>
           <div className='col-sm-2'>
@@ -142,30 +123,30 @@ console.log("loginname", loginname);
               <div className='border border-black rounded shadow p-3'>
                 <div className='mb-2'>
                   <h4>Leave For</h4>
-                  <p className='m-0'>{moment(data.from).format('Do MMMM YYYY')} to { moment(data.to).format('Do MMMM YYYY')}</p>
-                  <p>Number Of days {moment(data.to).diff(moment(data.form), "Days")+1}</p>
+                  <p className='m-0'>{moment(data.from).format('Do MMMM YYYY')} to {moment(data.to).format('Do MMMM YYYY')}</p>
+                  <p>Number Of days {moment(data.to).diff(moment(data.form), "Days") + 1}</p>
                 </div>
                 <div className='mb-2'>
                   <h4>Reason</h4>
                   <p>{data.reason}</p>
                 </div>
                 {data.status === 'pending' &&
-                     <div className='mb-2'>
-                     <h4>Status</h4>
-                     <p>{data.status}</p>
-                   </div>
-                    }
-                  {data.status === "Approved" &&
-                    <div>
-                      <h4 className='text-success'><CheckCircleIcon /> Approved</h4>
-                    </div>
-                  }
-                  {data.status === "Rejected" &&
-                    <div>
-                      <h4 className='text-danger'><HighlightOffIcon /> Rejected</h4>
-                    </div>
-                  }
-                  {/* <p className='text-secondary ml-5 mb-4'>Applide date : {moment().subtract(10, 'days').calendar()}</p> */}
+                  <div className='mb-2'>
+                    <h4>Status</h4>
+                    <p>{data.status}</p>
+                  </div>
+                }
+                {data.status === "Approved" &&
+                  <div>
+                    <h4 className='text-success'><CheckCircleIcon /> Approved</h4>
+                  </div>
+                }
+                {data.status === "Rejected" &&
+                  <div>
+                    <h4 className='text-danger'><HighlightOffIcon /> Rejected</h4>
+                  </div>
+                }
+                {/* <p className='text-secondary ml-5 mb-4'>Applide date : {moment().subtract(10, 'days').calendar()}</p> */}
 
               </div>
             </div>

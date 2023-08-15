@@ -5,7 +5,7 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 function HodDassBord() {
 
   const navigate = useNavigate()
-  const leaveDatas = JSON.parse(localStorage.getItem("leavedata"))
+  const leaveDatas = JSON.parse(localStorage.getItem("leavedata") ||" []")
   console.log(leaveDatas);
 
   const handleApprove = (data) => {

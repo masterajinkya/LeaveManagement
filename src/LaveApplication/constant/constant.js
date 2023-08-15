@@ -1,1 +1,1 @@
-export const DEPARTMENT = ["Computer","Civil","Mechanical"]
+export const DEPARTMENT = ["Computer","Information Technology","Artificial intelligence (AI)","Civil","Mechanical"]

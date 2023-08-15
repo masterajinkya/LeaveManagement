@@ -3,7 +3,7 @@
     margin-right: 10px;
     text-decoration: none;
 }
-.link:hover{
+/* .link:hover{
     transform: scale(1.1);
     box-shadow: 1px 2px 3px ,rgba(black,0.5);
     padding: 5px;
@@ -11,7 +11,7 @@
     color: blue;
     position: relative;
     border-radius: 5px;
-}
+} */
 .imgs{
     object-fit: cover;
     height: 100vh;

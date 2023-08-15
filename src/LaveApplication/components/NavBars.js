@@ -34,11 +34,11 @@ function NavBars() {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Leave Application
             </Typography>
-            <Link className='link' to={"/"}  >HOME</Link>
-            {/* {logout ? "" : <Link className='link' to={"login"} >LOGIN</Link>} */}
-            {/* <Link className='link' to={"login"} >LOGIN</Link> */}
-            {logout ?<Link onClick={handleLogout} className='link' sx={{ color: 'white' }}  >LOGOUT</Link> : <Link className='link' to={"login"} >LOGIN</Link>}
-            {/* <Link onClick={handleLogout} className='link' sx={{ color: 'white' }}  >LOGOUT</Link> */}
+
+
+            <Link className='link ml-4' to={"/"}  >HOME</Link>
+            {logout ?<Link onClick={handleLogout} className='link' sx={{ color: 'white' }}  >LOGOUT</Link>
+             : <Link className='link' to={"login"} >LOGIN</Link>}
           </Toolbar>
         </AppBar>
       </Box>

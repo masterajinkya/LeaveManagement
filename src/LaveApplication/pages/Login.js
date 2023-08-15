@@ -26,8 +26,8 @@ function Login() {
         const storedUser = JSON.parse(localStorage.getItem("user"));
         const finduser = storedUser.find((user) =>  user.username === loginData.username && user.password === loginData.password)
         if (finduser) {
-            alert("login successful");
-            console.log("login successful")
+            // alert("login successful");
+            // console.log("login successful")
             localStorage.setItem("login", JSON.stringify(finduser))
             navigate(`/dashbord/${finduser.role}`)
 
@@ -57,10 +57,10 @@ function Login() {
 
                     <Typography textAlign="center" color="primary" variant='h4'>Login Form</Typography>
 
-                    <TextField variant='outlined' margin='normal' placeholder='Enter username'
+                    <TextField variant='outlined' margin='normal' label='Enter username'
                         type='text' name='username' value={loginData.username} onChange={handleChange} />
 
-                    <TextField variant='outlined' margin='normal' placeholder='Enter Password'
+                    <TextField variant='outlined' margin='normal' label='Enter Password'
                         type='password' name='password' value={loginData.password} onChange={handleChange} />
 
                     <Button sx={{ my: 2 }} type='submit' variant='contained'>Login</Button>
