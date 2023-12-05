@@ -75,7 +75,7 @@ function HodDassBord() {
               </div>
             </div>
           }) : <div>
-           <h1> No Applid Leaves </h1>
+           <h1 className=' mt-4'> No Applid Leaves </h1>
             </div>}
 
         </div>
