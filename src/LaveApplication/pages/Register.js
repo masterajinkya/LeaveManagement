@@ -40,6 +40,7 @@ function Register() {
     }
   }, [SameUserdata]);
 
+
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!error) {
@@ -88,27 +89,6 @@ function Register() {
         >
 
           <div className='mb-2'>
-            {/* <FormLabel id="demo-row-radio-buttons-group-label">HOD</FormLabel>
-            <Radio
-              checked={selectedValue === 'hod'}
-              onChange={handleRadioChange}
-              onClick={() => setIsHod(1)}
-              value="hod"
-              name="radio-buttons"
-              inputProps={{ 'aria-label': 'A' }}
-            />
-
-            <FormLabel id="demo-row-radio-buttons-group-label">STAFF</FormLabel>
-            <Radio
-              checked={selectedValue === 'staff'}
-              onChange={handleRadioChange}
-
-              onClick={() => setIsHod(2)}
-
-              value="staff"
-              name="radio-buttons"
-              inputProps={{ 'aria-label': 'B' }}
-            /> */}
 
             <FormControl>
               <RadioGroup row name='role' defaultValue="hod">
@@ -127,7 +107,7 @@ function Register() {
           </FormControl>
 
           <FormControl sx={{ mb: 3 }}>
-            <TextField variant='outlined' name='email' value={registerdata.email} onChange={handleChange} required label='Enter Email Address' type='email' />
+            <TextField  name='email' value={registerdata.email} onChange={handleChange} required label='Enter Email Address' type='email' />
           </FormControl>
 
           <FormControl sx={{ ml: 3, mb: 3 }}>
@@ -152,7 +132,7 @@ function Register() {
           <div>
             <FormControl sx={{ mb: 3 }} >
               <TextField variant='outlined' label="Username" name='username' value={registerdata.username} onChange={handleChange} required type='text' />
-              {error && <Typography className='text-danger'>username is already taken</Typography> }
+              {error && <Typography className='text-danger'>username is already taken</Typography>}
             </FormControl>
             <FormControl sx={{ ml: 3, mb: 3 }} >
               <TextField variant='outlined' label="Password" name='password' value={registerdata.password} onChange={handleChange} required type='password' />

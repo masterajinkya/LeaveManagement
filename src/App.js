@@ -3,7 +3,7 @@ import Leaveapp from "./LaveApplication/Main"
 function App() {
   return (
     < >
-    <Leaveapp/>
+      <Leaveapp />
     </>
   );
 }
