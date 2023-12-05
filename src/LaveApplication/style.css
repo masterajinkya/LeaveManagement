@@ -17,3 +17,13 @@
     height: 100vh;
     position: fixed;
 }
+.nodtata{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nodtata h1{
+    color: red;
+
+}

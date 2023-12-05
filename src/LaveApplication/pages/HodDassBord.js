@@ -42,7 +42,8 @@ function HodDassBord() {
     <>
       <div className='container'>
         <div className='row mt-4'>
-          {leaveData ? leaveDatas.map((data) => {
+          {leaveDatas == "" && <div className='nodtata '> <h1>No Leave Request Available</h1></div>}
+          { leaveDatas.map((data) => {
             return <div className='col-4 '>
               <div className='border border-black p-4 shadow'>
                 <h5>{data.fname} {data.lname}  </h5>
@@ -74,9 +75,7 @@ function HodDassBord() {
                 </div>
               </div>
             </div>
-          }) : <div>
-           <h1 className=' mt-4'> No Applid Leaves </h1>
-            </div>}
+          })}
 
         </div>
       </div>
